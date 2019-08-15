@@ -16,7 +16,36 @@
 </head>
 <body>
     <div class="container" style="text-align:center">
-        <h1>First Page</h1>
+        <div class="jumbotron">
+            <h1>Home Page</h1>
+            API is here : <a href="/data_firebase/4/6637"><small>click</small></a>
+            
+        </div>
+        <br>
+        <br>
+       
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Owner ID</th>
+                <th>campaign_id</th>
+                <th>url_name</th>
+                <th>PA</th>
+                <th>DA</th>
+              </tr>
+            </thead>
+            <tbody>
+             {% for i in range(count) %}
+              <tr>
+                <td>{{res[i][0]}}</td>
+                <td>{{res[i][1]}}</td>
+                <td>{{res[i][2]}}</td>
+                <td>{{res[i][3]}}</td>
+                <td>{{res[i][4]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
     </div>
 </body>
 </html>
