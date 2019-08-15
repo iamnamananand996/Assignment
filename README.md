@@ -2,6 +2,18 @@
 
 link of app : https://main-app-test.herokuapp.com/
 
+### Clone this repository
+
+Type the following commands in your terminal:
+```bash
+cd path/to/directory/
+git clone https://github.com/namananand996/Assignment
+cd Assignment/main_application
+python app.py
+```
+
+### Import SQL file to XAMPP server
+
 
 
 # Screenshot
