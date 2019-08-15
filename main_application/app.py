@@ -3,6 +3,7 @@ from flaskext.mysql import MySQL
 
 import json
 
+# firebase libraries
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -15,6 +16,8 @@ db = firestore.client()
 
 app = Flask(__name__)
 
+
+# SQL connection with XAMPP server
 app.config['SECRET_KEY'] = 'ec830e5ae057c5b08f5a435a7b13e891'
 
 # Config MySQL
@@ -75,6 +78,8 @@ def register():
 
     return 'data inserted'
 
+
+# SQL to json API
 @app.route('/data/<owner_id>/<campaign_id>',methods=['GET','POST'])
 def data(owner_id,campaign_id):
     # if request.method == 'GET':
@@ -129,6 +134,7 @@ def update_firebase():
     return "data inserted"
 
 
+# Firebase to json API
 @app.route('/data_firebase/<owner_id>/<campaign_id>',methods=['GET','POST'])
 def data_firebase(owner_id,campaign_id):
     temp_dic = {}
