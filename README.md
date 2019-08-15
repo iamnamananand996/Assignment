@@ -12,7 +12,7 @@ cd Assignment/main_application
 python app.py
 ```
 
-### Import SQL file to XAMPP server
+### Note : Import SQL file to XAMPP server
 
 
 
