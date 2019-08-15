@@ -30,7 +30,17 @@ mysql.init_app(app)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    with open('data.json') as f:
+        data = json.loads(f.read())
+    res = []
+    for x in data['data']['campaign'].keys():   
+        for i in data['data']['campaign']['146']['url'].keys():
+            for j in data['data']['campaign']['146']['url'][i]['backlink_data']['follow']:
+                for k in data['data']['campaign']['146']['url'][i]['backlink_data']['follow'][j]:
+                    res.append([data['data']['owner_id'],i,j,data['data']['campaign']['146']['url'][i]['backlink_data']['follow'][j]['pa'],data['data']['campaign']['146']['url'][i]['backlink_data']['follow'][j]['da']])
+                    # print(data['data']['owner_id'],i,j,data['data']['campaign']['146']['url'][i]['backlink_data']['follow'][j]['pa'],data['data']['campaign']['146']['url'][i]['backlink_data']['follow'][j]['da'])
+    print(res)
+    return render_template('index.html',res=res,count=len(res))
 
 @app.route('/update')
 def register():
