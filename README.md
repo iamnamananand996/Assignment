@@ -1,4 +1,4 @@
-# Assignment
+# Rest API with SQL and FireBase
 
 link of app : https://main-app-test.herokuapp.com/
 
